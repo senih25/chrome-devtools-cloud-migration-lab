@@ -106,7 +106,7 @@ Some AI systems need very different kinds of behavior. They must react quickly t
 
 A modular architecture separates these responsibilities into distinct paths. One path can be reflexive, handling immediate, time-sensitive interpretation of incoming signals. Another path can focus on strategy, supporting higher-level reasoning and more context-aware decision-making.  Other paths target other types of functionality.
 
-![Architectural Diagram](img/Diagram-v2-orange.png)
+![Architectural Diagram](img/Diagram-v3-orange.png)
 
 Some decisions must happen in real-time.  Some decisions benefit from longer thinking.
 
@@ -178,12 +178,13 @@ C. Obtaining a Gemini API key
 
    
 
-   To create a Gemini API Key, we need to use [Google AI Studio](https://aistudio.google.com/) to generate keys.
+   To create a Gemini API Key, we need to use [Google Agent Studio](https://console.cloud.google.com/agent-platform/studio/) to generate API keys.
 
    
 
-   Within Google AI Studio, click on “Get API key” in the bottom left corner. Create an API key for Gemini (it looks like a long string of seemingly random characters).  Save this key in a secure location.  We will use this API key in Step 6 “Build the Racing Car Simulator” to authenticate our access to Gemini in Google Cloud.
+   Within Google Agent Studio, click on “Get API key” in the bottom left corner area. Create an API key for Gemini (it looks like a long string of seemingly random characters).  Save this key in a secure location.  We will use this API key in Step 6 “Build the Racing Car Simulator” to authenticate our access to Gemini in Google Cloud.
 
+   You might see "Enable APIs to access full platform capabilities" at the top.  You can click on "Enable APIs" (which may take a minute or two to complete).  Make sure you are logged in via your gmail.com account.
 
 > aside positive
 Keep your API keys out of your source code and never commit them to Git repositories. It is recommended to store them either in environment variables or a secure secrets manager.  Treat API keys like passwords: do not share them in chats, email, screenshots, or logs.  Rotate them regularly. For production systems, you should add monitoring and usage alerts to quickly detect any misuse and immediately revoke compromised keys.
@@ -249,7 +250,7 @@ gcloud run deploy --verbosity=info streaming-telemetry-server \
 Note you may have to press 'Y' when prompted
 
 - The first run may prompt you to enable APIs or create an Artifact Registry repo; accept as needed.  
-- If you use a different region than `us-central1`, specify that region using `--region`  
+- If you use a different region than `us-central1`, specify that region using `--region`
 - When the deploy finishes, gcloud prints the **service-URL**.  We just need to append “events” to this URL to use it as the full endpoint for the telemetry server.
 
 ---
@@ -259,7 +260,7 @@ Note you may have to press 'Y' when prompted
 The telemetry server is now emitting simulated telemetry data using Server-Sent-Events (SSE) at an endpoint of the form :
 
 ```
-*service-URL*/events		// service-URL - the last line displayed by "deploy"
+*service-URL*/events		// service-URL - the last line displayed by "deploy".  Don't forget to append "/events".
 ```
 
 > aside positive
