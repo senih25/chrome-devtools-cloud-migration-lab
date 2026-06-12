@@ -59,3 +59,31 @@ Cloud NDB migration sonrası Datastore composite index hatasını analiz ettim; 
 ## CV Cümlesi
 
 Migrated an App Engine sample from legacy NDB concepts to Cloud NDB, configured Python 3.12 App Engine Standard deployment, resolved Datastore composite index requirements, and validated the live application using Chrome DevTools Network, Console, and Application panels.
+
+## Safe Reuse for Related Repositories
+
+1. Allowed public-safe documentation/checklist pattern:
+   - Cloud NDB migration notes
+   - Datastore composite index troubleshooting checklist
+   - DevTools Network/Console/Application verification pattern
+   - Python 3.12 App Engine deployment checklist
+
+2. Needs manual review:
+   - adapting the index/debugging checklist to sensitive local dashboards
+   - using the checklist for PHI-free aggregate export consumers
+
+3. Forbidden sensitive-data coupling:
+   - raw health data transfer
+   - e-Nabız export use
+   - patient-level processing
+   - direct runtime integration with sensitive health repositories
+
+## Evidence Pointers
+
+- Python 3.12 App Engine Standard configuration was used.
+- `gunicorn` entrypoint was configured.
+- `google-cloud-ndb` usage was verified.
+- Datastore composite index requirement was identified and resolved.
+- Index reached `READY` state before final verification.
+- Chrome DevTools verification covered Network, Console, and Application checks.
+- Full live endpoint is intentionally omitted from top-level public-facing docs.
