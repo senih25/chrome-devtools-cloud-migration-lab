@@ -40,7 +40,7 @@ jobs:
           found=0
           while IFS= read -r f; do
             [ -f "$f" ] || continue
-            count=$(grep -E -I -o "$patterns" "$f" 2>/dev/null | wc -l | tr -d ' ')
+            count=$( { grep -E -I -o "$patterns" "$f" 2>/dev/null || true; } | wc -l | tr -d ' ')
             if [ "$count" != "0" ]; then
               echo "Potential secret pattern in $f ($count matches)"
               found=1
