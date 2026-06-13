@@ -131,3 +131,40 @@ Built a Python 3.12 App Engine module that migrates a working guestbook sample f
 ## CV Sentence
 
 Migrated an App Engine Python 3 guestbook module from Cloud NDB to the Cloud Datastore client library, replacing NDB models with Datastore entities and validating GET/POST request behavior for DevTools-based verification.
+
+## Deployment Evidence
+
+Deployment mode:
+
+`gcloud app deploy app.yaml --no-promote`
+
+Deployed version URL:
+
+`https://20260613t225129-dot-trustable-ai-100mph.ew.r.appspot.com`
+
+Deployment result:
+
+- Service: default
+- Project: trustable-ai-100mph
+- Version: 20260613t225129
+- Traffic promotion: no
+- Main production URL was not changed automatically
+
+Expected live verification:
+
+- `GET /` → 200
+- `POST /sign` → 302
+- redirected `GET /?guestbook_name=` → 200
+- Chrome DevTools Console: no critical runtime errors
+- Chrome DevTools Application: storage/cookies/cache reviewed
+- Chrome DevTools Security: HTTPS verified
+
+## Module 03 Completion Status
+
+Module 03 is complete for the portfolio learning track:
+
+- Code migration completed
+- Local Flask verification completed
+- GitHub PR merged
+- App Engine no-promote deployment completed
+- DevTools live verification prepared
