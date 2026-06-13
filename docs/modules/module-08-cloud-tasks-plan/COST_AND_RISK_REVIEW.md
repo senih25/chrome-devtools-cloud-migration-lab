@@ -1,4 +1,4 @@
-# Module 03 — Cost and Risk Review
+# Module 08 — Cost and Risk Review
 
 This PR enables nothing and costs nothing.
 

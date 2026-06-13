@@ -21,3 +21,7 @@ Type: Planning increment, documentation only
 - No Google Cloud API or paid service enablement.
 - No queues, IAM changes, or service accounts created.
 - No PHI, secrets, or health data.
+
+## Correction note
+
+Module numbering was later realigned in v0.1.2. The Cloud Tasks planning package originally added here has been moved from Module 03 to Module 08 planning.

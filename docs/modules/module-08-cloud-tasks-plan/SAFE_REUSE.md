@@ -1,4 +1,4 @@
-# Module 03 — Safe Reuse for Related Repositories
+# Module 08 — Safe Reuse for Related Repositories
 
 This lab is a public, PHI-free engineering artifact. Some patterns may be useful to private or sensitive repositories, but reuse flows one way only.
 

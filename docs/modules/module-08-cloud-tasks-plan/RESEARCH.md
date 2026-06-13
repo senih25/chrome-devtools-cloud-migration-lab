@@ -1,18 +1,18 @@
-# Module 03 — Cloud Tasks Migration Research
+# Module 08 — Cloud Tasks Migration Research
 
 Status: Planning only. No implementation, no deployment, no paid service enablement in this increment.
 
-Branch: docs/module-03-cloud-tasks-plan
+Branch: docs/module-08-cloud-tasks-plan-plan
 Risk level: Medium
 Evidence model: Chrome DevTools Network + Cloud Logging
 
 ## Purpose
 
-Module 03 prepares the migration of the lab sample app from legacy App Engine Task Queue push tasks to Cloud Tasks.
+Module 08 prepares the migration of the lab sample app from legacy App Engine Task Queue push tasks to Cloud Tasks.
 
 This document is the source-grounded research base. Implementation is deferred to a future PR gated by IMPLEMENTATION_PLAN.md.
 
-Module 02 migrated Datastore access from App Engine NDB to Cloud NDB. Module 03 continues the same modernization arc by removing the next legacy bundled service and replacing it with a standalone Cloud product.
+Module 02 migrated Datastore access from App Engine NDB to Cloud NDB. Module 08 continues the same modernization arc by removing the next legacy bundled service and replacing it with a standalone Cloud product.
 
 ## Official source links
 
@@ -33,7 +33,7 @@ Task Queue and Cloud Tasks address the same underlying queue universe, but Cloud
 
 Cloud Tasks replaces push tasks only.
 
-Task Queue pull tasks migrate to Cloud Pub/Sub and are out of scope for Module 03.
+Task Queue pull tasks migrate to Cloud Pub/Sub and are out of scope for Module 08.
 
 ## Task Queues vs Cloud Tasks
 

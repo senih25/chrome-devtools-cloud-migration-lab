@@ -1,4 +1,4 @@
-# Module 03 — Implementation Plan
+# Module 08 — Implementation Plan
 
 Status: Future PR only. This planning PR ships zero code and zero cloud changes.
 
@@ -23,16 +23,16 @@ Status: Future PR only. This planning PR ships zero code and zero cloud changes.
 
 | Branch | Purpose |
 |---|---|
-| docs/module-03-cloud-tasks-plan | This planning PR |
-| feat/module-03-cloud-tasks-baseline | Optional Task Queue baseline |
-| feat/module-03-cloud-tasks-migration | Actual Cloud Tasks migration |
-| docs/module-03-evidence | Sanitized evidence and screenshots |
+| docs/module-08-cloud-tasks-plan-plan | This planning PR |
+| feat/module-08-cloud-tasks-plan-baseline | Optional Task Queue baseline |
+| feat/module-08-cloud-tasks-plan-migration | Actual Cloud Tasks migration |
+| docs/module-08-evidence | Sanitized evidence and screenshots |
 
 ## Candidate future module layout
 
-- gae-flask-module-3/mod7-gaetasks-baseline/
-- gae-flask-module-3/mod8-cloudtasks/
-- docs/modules/module-03-cloud-tasks/evidence/
+- gae-flask-module-8/mod7-gaetasks-baseline/
+- gae-flask-module-8/mod8-cloudtasks/
+- docs/modules/module-08-cloud-tasks-plan/evidence/
 
 ## Local/dev verification plan
 

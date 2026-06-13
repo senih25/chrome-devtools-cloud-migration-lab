@@ -21,18 +21,19 @@ The Gemini-generated roadmap in `docs/research/GOOGLE_DEVELOPER_LEARNING_TO_PORT
 
 ## Phase 2 — Next implementation modules
 
-### Module 03 — Cloud Tasks Migration (ACTIVE: planning)
+### Module 03 — Cloud NDB to Cloud Datastore Migration (ACTIVE: planning)
 
-App Engine Task Queue push tasks to Cloud Tasks, following Serverless Migration Station Module 8 conceptually.
+Official Google Codelab Module 03 is the optional migration from Cloud NDB to Cloud Datastore.
 
-- This increment is planning only: research, implementation plan, DevTools Network evidence plan, cost/risk review, and safe-reuse boundaries.
-- No implementation, no deployment, no paid service enablement yet.
-- Implementation starts only after deployment gates G1-G6 in docs/modules/module-03-cloud-tasks/IMPLEMENTATION_PLAN.md pass.
-- Planning docs: docs/modules/module-03-cloud-tasks/
+- This increment realigns repository numbering with the official codelab series.
+- Future implementation starts from `gae-flask-module-1/mod2-cloud-ndb/`.
+- Future implementation target: `gae-flask-module-1/mod3-cloud-datastore/`.
+- Planning docs: `docs/modules/module-03-cloud-datastore/`.
+- Cloud Tasks planning has been moved to Module 08 planning because it corresponds to the later Task Queue to Cloud Tasks codelab.
 
 
-1. Cloud Tasks migration candidate
-2. Cloud Storage migration candidate
+1. Cloud NDB to Cloud Datastore migration
+2. Cloud Tasks migration candidate (Module 08 planning; later implementation)
 3. Containerization path
 4. Cloud Run deployment path
 5. Lighthouse / Performance audit

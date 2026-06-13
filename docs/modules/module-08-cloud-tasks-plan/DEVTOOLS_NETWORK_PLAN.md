@@ -1,4 +1,4 @@
-# Module 03 — Chrome DevTools Network Verification Plan
+# Module 08 — Chrome DevTools Network Verification Plan
 
 Evidence model for the future Cloud Tasks implementation.
 
@@ -97,4 +97,4 @@ Record GET / timing and TTFB. If a baseline exists, compare with and without enq
 - Crop or mask account emails, private URLs, project IDs beyond demo convention, cookies, and auth context.
 - Use a clean browser profile.
 - Do not capture sensitive repos or data.
-- Store future screenshots under docs/modules/module-03-cloud-tasks/evidence/.
+- Store future screenshots under docs/modules/module-08-cloud-tasks-plan/evidence/.
