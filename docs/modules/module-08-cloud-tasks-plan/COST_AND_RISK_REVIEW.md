@@ -8,7 +8,7 @@ This PR enables nothing and costs nothing.
 |---|---|---|
 | Cloud Tasks | Queue and dispatch | Operations after free tier |
 | App Engine Standard | App and task handler | Instance hours, egress |
-| Datastore via Cloud NDB | Visit entities | Reads, writes, storage |
+| Datastore via Cloud NDB | Greeting entities under a Book ancestor | Reads, writes, storage |
 | Cloud Build and Cloud Storage | App deploy staging | Build minutes and storage |
 | Cloud Logging | Dispatch evidence | Log ingestion after free allotment |
 | IAM | Queue access control | Free, but misconfiguration risk |

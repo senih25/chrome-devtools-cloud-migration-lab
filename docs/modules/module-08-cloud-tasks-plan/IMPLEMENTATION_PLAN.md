@@ -30,7 +30,7 @@ Status: Future PR only. This planning PR ships zero code and zero cloud changes.
 
 ## Candidate future module layout
 
-- gae-flask-module-8/mod7-gaetasks-baseline/
+- gae-flask-module-1/mod7-gaetasks-baseline/
 - gae-flask-module-8/mod8-cloudtasks/
 - docs/modules/module-08-cloud-tasks-plan/evidence/
 
