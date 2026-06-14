@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 11 Accessibility Demo</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f2ea;
+      --surface: #fffaf1;
+      --text: #1f1c18;
+      --muted: #b8afa3;
+      --line: #d9cfc2;
+      --accent: #0f766e;
+      --accent-dark: #0b4f4a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(180deg, #fbf7f0 0%, #f2ece1 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--accent-dark);
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid #111827;
+      outline-offset: 3px;
+    }
+
+    header,
+    main,
+    footer {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0 12px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 16px;
+      padding: 0;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .hero,
+    .panel,
+    .card-list {
+      background: rgba(255, 250, 241, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      margin: 20px 0;
+      box-shadow: 0 12px 30px rgba(94, 71, 45, 0.08);
+    }
+
+    .hero-grid,
+    .form-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .hero-image {
+      width: 100%;
+      min-height: 220px;
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.18), rgba(255, 255, 255, 0.2)),
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.28), transparent 45%),
+        linear-gradient(120deg, #e7dcca, #d7e4dc);
+      border: 1px dashed #9ca3af;
+    }
+
+    .muted-note {
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .primary-button,
+    .secondary-button,
+    .icon-only-button {
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .primary-button {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .secondary-button {
+      background: #efe7db;
+      color: var(--text);
+    }
+
+    .icon-only-button {
+      background: #e6ddd1;
+      color: var(--text);
+      width: 44px;
+      height: 44px;
+      padding: 0;
+    }
+
+    .custom-chip {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #ddd2c2;
+      color: #2c241c;
+      user-select: none;
+    }
+
+    /* Intentional issue: missing visible focus style on custom control. */
+    .custom-chip:focus {
+      outline: none;
+    }
+
+    .form-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    label,
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+    }
+
+    input,
+    textarea {
+      margin-top: 8px;
+      padding: 12px 14px;
+      border: 1px solid #b8afa3;
+      border-radius: 12px;
+      background: #fff;
+      font: inherit;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    footer {
+      padding: 20px 0 40px;
+    }
+
+    @media (min-width: 760px) {
+      .hero-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p>Module 11 synthetic accessibility practice page</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#request">Request sample</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#footer-note">Footer note</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="overview">
+      <div class="hero-grid">
+        <div>
+          <h1>Synthetic Accessibility Demo</h1>
+          <p>
+            This static page exists only for safe local accessibility inspection with
+            Chrome DevTools and Lighthouse.
+          </p>
+          <p class="muted-note">
+            Intentional issue: low contrast helper text for contrast checking practice.
+          </p>
+          <div class="actions">
+            <button class="primary-button" type="button">Start review</button>
+            <button class="secondary-button" type="button">Read notes</button>
+            <!-- Intentional issue: button without accessible name. -->
+            <button class="icon-only-button" type="button"><span aria-hidden="true">+</span></button>
+          </div>
+          <!-- Intentional issue: heading order skips H2. -->
+          <h3>Why this page exists</h3>
+          <p>
+            It contains a small number of deliberate accessibility issues so the audit
+            workflow has something concrete to identify.
+          </p>
+          <!-- Intentional issue: unclear link text. -->
+          <p><a href="#request">Click here</a> to jump to the sample form.</p>
+          <!-- Intentional issue: custom control without visible focus style. -->
+          <div class="custom-chip" role="button" tabindex="0">Custom filter chip</div>
+        </div>
+        <div>
+          <!-- Intentional issue: image without useful alt text. -->
+          <div class="hero-image" role="img" aria-label="image"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="request">
+      <h2>Sample Contact Form</h2>
+      <p>All content is synthetic and local-only.</p>
+      <form>
+        <div class="form-grid">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Synthetic name">
+          </div>
+          <div>
+            <!-- Intentional issue: input without label. -->
+            <input id="email" name="email" type="email" placeholder="Email address">
+          </div>
+          <div>
+            <label for="topic">Topic</label>
+            <input id="topic" name="topic" type="text" placeholder="Accessibility review">
+          </div>
+        </div>
+        <div style="margin-top: 18px;">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" rows="5" placeholder="Synthetic notes only"></textarea>
+        </div>
+        <div class="actions">
+          <button class="primary-button" type="submit">Send synthetic request</button>
+          <button class="secondary-button" type="reset">Reset form</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card-list" id="highlights">
+      <h2>Review Targets</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Keyboard</h3>
+          <p>Check tab order, focus visibility, and control activation.</p>
+        </article>
+        <article class="card">
+          <h3>Semantics</h3>
+          <p>Check headings, links, buttons, landmarks, and labels.</p>
+        </article>
+        <article class="card">
+          <h3>Contrast</h3>
+          <p>Check helper text, controls, and link visibility against the background.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer-note">
+    <p>This demo is synthetic, local-only, and not connected to any API or cloud resource.</p>
+  </footer>
+</body>
+</html>
