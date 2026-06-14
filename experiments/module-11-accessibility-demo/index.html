@@ -136,9 +136,9 @@
       user-select: none;
     }
 
-    /* Intentional issue: missing visible focus style on custom control. */
-    .custom-chip:focus {
-      outline: none;
+    .custom-chip:focus-visible {
+      outline: 3px solid currentColor;
+      outline-offset: 3px;
     }
 
     .form-grid {
@@ -215,23 +215,18 @@
           <div class="actions">
             <button class="primary-button" type="button">Start review</button>
             <button class="secondary-button" type="button">Read notes</button>
-            <!-- Intentional issue: button without accessible name. -->
-            <button class="icon-only-button" type="button"><span aria-hidden="true">+</span></button>
+            <button class="icon-only-button" type="button" aria-label="Add item"><span aria-hidden="true">+</span></button>
           </div>
-          <!-- Intentional issue: heading order skips H2. -->
-          <h3>Why this page exists</h3>
+          <h2>Why this page exists</h2>
           <p>
             It contains a small number of deliberate accessibility issues so the audit
             workflow has something concrete to identify.
           </p>
-          <!-- Intentional issue: unclear link text. -->
-          <p><a href="#request">Click here</a> to jump to the sample form.</p>
-          <!-- Intentional issue: custom control without visible focus style. -->
+          <p><a href="#request">Review the sample form accessibility issues</a> to jump to the sample form.</p>
           <div class="custom-chip" role="button" tabindex="0">Custom filter chip</div>
         </div>
         <div>
-          <!-- Intentional issue: image without useful alt text. -->
-          <div class="hero-image" role="img" aria-label="image"></div>
+          <div class="hero-image" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -246,7 +241,7 @@
             <input id="name" name="name" type="text" placeholder="Synthetic name">
           </div>
           <div>
-            <!-- Intentional issue: input without label. -->
+            <label for="email">E-posta</label>
             <input id="email" name="email" type="email" placeholder="Email address">
           </div>
           <div>
