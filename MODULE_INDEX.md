@@ -20,7 +20,7 @@ Status values:
 | 04 | `module-04-cloud-run-docker` | Done | Official Google codelab / implemented | App Engine to Cloud Run with Docker | Network, Console, Application, Security | Cloud Run, Docker, Artifact Registry, Cloud Build | Medium | `gae-flask-module-1/mod4-cloud-run-docker/` | Containerized Cloud Run migration module | Needs manual review |
 | 05 | `mod5-cloud-run-buildpacks` | Done | Codelab/module work | Cloud Run migration using Cloud Buildpacks and Procfile | Network, Console, Application, Security | Cloud Run, Buildpacks, Procfile, Gunicorn | Low | `gae-flask-module-1/mod5-cloud-run-buildpacks/README-module-05.md` | Buildpacks deployment evidence | Dockerfile-free Cloud Run migration path |
 | 06 | `module-06-cloud-run` | Next | Research candidate | Cloud Run deployment evidence | Network, Performance, Security | Cloud Run | Medium | TBD | Serverless deployment proof | Needs manual review |
-| 07 | `module-07-ci-guardrails` | Now | Internal system module | GitHub Actions repo guardrails | N/A | GitHub Actions | Low | `.github/workflows/repo-guardrails.yml` | Repo governance proof | Allowed public-safe documentation/checklist pattern |
+| 07 | `module-07-appengine-push-tasks` | Next | Official Google codelab / research planning | Add App Engine Push Task Queues as prerequisite for Module 08 Cloud Tasks | Network, Console, Cloud Logging | App Engine, Task Queue push queues | Medium | TBD | Push Task Queue baseline before Cloud Tasks migration | Needs manual review |
 | 08 | `module-08-cloud-tasks-plan` | Later | Official Google codelab / research planning | Cloud Tasks migration plan | Network, Console, Cloud Logging | App Engine, Cloud Tasks | Medium | `docs/modules/module-08-cloud-tasks-plan/` | Cloud Tasks migration planning package | Needs manual review |
 | 09 | `module-09-pwa-service-worker` | Later | Research candidate | Offline-capable demo | Application, Network | Optional hosting | Medium | TBD | PWA evidence | Needs manual review |
 | 10 | `module-10-security-panel` | Next | Research candidate | HTTPS, mixed content, cookie/security review | Security, Application, Network | Optional hosting | Medium | TBD | Security review practice | Allowed public-safe documentation/checklist pattern |
@@ -34,3 +34,12 @@ Status values:
 | 18 | `module-18-cloud-cdn` | Needs manual review | Research candidate | Cache hit/miss analysis | Network, Lighthouse | Cloud CDN | High cost | TBD | Edge performance research | Needs manual review |
 | 19 | `module-19-api-gateway` | Needs manual review | Research candidate | API boundary analysis | Network, Security | API Gateway | High | TBD | API governance research | Needs manual review |
 | 20 | `module-20-cloud-trace` | Needs manual review | Research candidate | Trace correlation research | Network, Performance | Cloud Trace | Medium/high | TBD | Observability research | Needs manual review |
+
+## Internal / non-codelab modules
+
+These are repo-governance modules, not part of the official Google codelab numbering.
+
+| ID | Module slug | Status | Product outcome | Evidence location | Portfolio output |
+|----|-------------|--------|-----------------|-------------------|------------------|
+| INT-01 | `internal-repo-guardrails` | Now | GitHub Actions repo guardrails for blocked paths and public-safe checks | `.github/workflows/repo-guardrails.yml` | Repo governance proof |
+
