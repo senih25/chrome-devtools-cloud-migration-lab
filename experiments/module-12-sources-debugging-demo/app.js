@@ -31,8 +31,8 @@ function calculateSubtotal(price, quantity) {
 }
 
 function calculateDiscountAmount(subtotal, discountPercent) {
-  // Intentional logic bug for Sources debugging practice.
-  return subtotal * (discountPercent / 10);
+  // Fixed in Module 12-E: percentage calculation now divides by 100.
+  return subtotal * (discountPercent / 100);
 }
 
 function calculateFinalTotal(subtotal, discountAmount) {
