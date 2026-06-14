@@ -1,0 +1,15 @@
+.gcloudignore
+.git
+.gitignore
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+*.log
+requirements-codelab-original.txt
+app-python27.yaml
+app3.yaml
+requirements-test.txt
+main_test.py
+README-module-02.md
