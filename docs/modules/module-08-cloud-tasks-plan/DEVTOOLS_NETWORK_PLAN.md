@@ -1,4 +1,4 @@
-# Module 08 — Chrome DevTools Network Verification Plan
+﻿# Module 08 â€” Chrome DevTools Network Verification Plan
 
 Evidence model for the future Cloud Tasks implementation.
 
@@ -32,7 +32,7 @@ Claiming DevTools shows the queue dispatch would be wrong. The portfolio value i
 ## Expected deployed request flow
 
 1. GET / returns 200.
-2. Server stores visit, queries recent visits, and enqueues task before response.
+2. Server stores a Greeting under a Book ancestor, queries recent greetings, and enqueues task before response.
 3. Static assets return 200 or 304.
 4. No browser-visible /trim request on deployed app.
 
@@ -74,7 +74,7 @@ Forbidden in payloads, fixtures, logs, or screenshots:
 
 - PHI
 - health data
-- e-Nabız exports
+- e-NabÄ±z exports
 - patient records
 - clinical text
 - identifiers
@@ -88,7 +88,7 @@ Record GET / timing and TTFB. If a baseline exists, compare with and without enq
 ## Failure cases
 
 - POST /trim with non-JSON body.
-- POST /trim missing oldest key.
+- POST /trim missing guestbook name / stale Greeting keys.
 - Request blocking for static asset graceful degradation.
 - Deployed handler 500 observed through Cloud Logging only.
 

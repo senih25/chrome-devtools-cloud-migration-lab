@@ -53,7 +53,7 @@ Task Queue pull tasks migrate to Cloud Pub/Sub and are out of scope for Module 0
 
 ## Expected architecture
 
-Browser GET / -> Flask app on App Engine -> Cloud NDB/Datastore visit write -> Cloud Tasks CreateTask RPC -> Cloud Tasks queue -> server-side POST /trim handler -> delete old demo Visit entities.
+Browser GET / -> Flask app on App Engine -> Cloud NDB/Datastore Greeting write under a Book ancestor -> Cloud Tasks CreateTask RPC -> Cloud Tasks queue -> server-side POST /trim handler -> delete old demo Greeting entities under a Book ancestor.
 
 The queue to handler dispatch is server-to-server and is not browser-visible.
 
