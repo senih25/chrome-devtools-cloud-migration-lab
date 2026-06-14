@@ -167,7 +167,7 @@ Server-side checks:
 - App Engine request log for `POST /trim`
 - failure/retry cases if handler returns `4xx` or `5xx`
 
-Do not treat Cloud Tasks dispatch as fully visible in Chrome DevTools Network. It is server-to-server evidence and belongs in Cloud Logging.
+Do not claim that Cloud Tasks dispatch appears in the browser Network panel. It is server-to-server evidence and belongs in Cloud Logging.
 
 ## Approval Gates
 

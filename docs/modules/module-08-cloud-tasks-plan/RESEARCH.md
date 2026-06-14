@@ -66,7 +66,7 @@ Future implementation must use:
 - one queue
 - one region
 - one handler: POST /trim
-- demo timestamp payloads only
+- minimal JSON payload with `guestbook_name` only
 - no recurring or scheduled tasks
 - no paid service enablement without manual approval
 - disable App Engine after verification

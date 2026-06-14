@@ -6,7 +6,7 @@ Status: Future PR only. This planning PR ships zero code and zero cloud changes.
 
 - Migrate the lab sample app asynchronous trim job from Task Queue push tasks to Cloud Tasks.
 - Use one queue and one handler: POST /trim.
-- Use synthetic timestamp payloads only.
+- Use a minimal JSON payload containing `guestbook_name` only.
 - Produce DevTools Network evidence for browser-visible requests.
 - Produce Cloud Logging evidence for server-side queue dispatch.
 - Document Task Queue API call versus Cloud Tasks API call.
@@ -31,7 +31,7 @@ Status: Future PR only. This planning PR ships zero code and zero cloud changes.
 ## Candidate future module layout
 
 - gae-flask-module-1/mod7-gaetasks-baseline/
-- gae-flask-module-8/mod8-cloudtasks/
+- gae-flask-module-1/mod8-cloudtasks/
 - docs/modules/module-08-cloud-tasks-plan/evidence/
 
 ## Local/dev verification plan
@@ -40,7 +40,7 @@ Cloud Tasks has no local emulator, so local verification is split:
 
 1. Run Flask locally with a stubbed Cloud Tasks client.
 2. Unit-test task construction without calling the API.
-3. Test POST /trim locally with synthetic JSON.
+3. Test POST /trim locally with synthetic JSON containing `guestbook_name`.
 4. Capture DevTools Network evidence for local GET / and local POST /trim.
 5. Deployed Cloud verification only after decision gates pass.
 
@@ -75,7 +75,7 @@ Cloud Tasks has no local emulator, so local verification is split:
 - No secrets.
 - No PHI.
 - No e-Nabız data.
-- Synthetic timestamp payloads only.
+- Minimal JSON payload with `guestbook_name` only.
 - Unit tests for task construction and /trim handler.
 - DevTools evidence captured and sanitized.
 - MODULE_INDEX updated to Done only after evidence lands.

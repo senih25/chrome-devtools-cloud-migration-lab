@@ -46,13 +46,13 @@ Expected server-side task shape:
 - Method: POST.
 - relative_uri: /trim.
 - Content-Type: application/json.
-- Body: JSON with oldest timestamp only.
+- Body: JSON with `guestbook_name` only.
 
 ## Expected worker request
 
 - POST /trim.
 - Content-Type: application/json.
-- JSON body with oldest timestamp.
+- JSON body with `guestbook_name`.
 - App Engine task headers visible in logs.
 - Local simulation may POST the same shape from the page origin.
 
@@ -68,13 +68,13 @@ Expected server-side task shape:
 
 ## Payload safety rules
 
-Payloads contain one synthetic value only: a Unix timestamp.
+Payloads contain one synthetic value only: `guestbook_name`.
 
 Forbidden in payloads, fixtures, logs, or screenshots:
 
 - PHI
 - health data
-- e-NabÄ±z exports
+- e-Nabiz exports
 - patient records
 - clinical text
 - identifiers
