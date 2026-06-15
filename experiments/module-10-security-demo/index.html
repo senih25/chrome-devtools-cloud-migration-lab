@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Module 10 Security Inspection Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Safe local demo for Chrome DevTools Security, Network, Console, and Application panel inspection.">
+  <link rel="stylesheet" href="data:text/css,
+    body{font-family:system-ui,sans-serif;margin:2rem;line-height:1.5;max-width:960px}
+    header,section{margin-bottom:1.5rem}
+    .card{border:1px solid #ccc;border-radius:12px;padding:1rem;margin:.75rem 0}
+    code{background:#f4f4f4;padding:.1rem .3rem;border-radius:4px}
+    button{padding:.6rem 1rem;border-radius:8px;border:1px solid #555;background:white;cursor:pointer}
+    button:focus-visible{outline:3px solid #000;outline-offset:3px}
+    .status{font-weight:700}
+  ">
+</head>
+<body>
+  <header>
+    <h1>Module 10 Security Inspection Demo</h1>
+    <p>
+      This is a safe local-only demo for Chrome DevTools Security and Network inspection.
+      It does not call external APIs, does not use credentials, and does not store real user data.
+    </p>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="scope-title">
+      <h2 id="scope-title">Safety Scope</h2>
+      <ul>
+        <li>No deploy</li>
+        <li>No cloud resource</li>
+        <li>No external API</li>
+        <li>No real user data</li>
+        <li>No secrets or credentials</li>
+        <li>No production security testing</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="security-title">
+      <h2 id="security-title">What To Inspect</h2>
+      <ul>
+        <li>Security panel page state for a local HTTP page.</li>
+        <li>Network panel document request and response headers.</li>
+        <li>Console messages and security warnings if any.</li>
+        <li>Application panel localStorage and sessionStorage entries.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="storage-title">
+      <h2 id="storage-title">Synthetic Storage Demo</h2>
+      <p>
+        This button writes only synthetic demo values to localStorage and sessionStorage.
+        It does not store personal data.
+      </p>
+      <button id="write-storage" type="button">Write synthetic storage values</button>
+      <p class="status" id="storage-status" role="status">Storage not written yet.</p>
+    </section>
+
+    <section class="card" aria-labelledby="form-title">
+      <h2 id="form-title">No-Network Form Demo</h2>
+      <form id="demo-form">
+        <label for="demo-input">Synthetic note</label>
+        <input id="demo-input" name="demoInput" value="local-only-demo" autocomplete="off">
+        <button type="submit">Run local-only action</button>
+      </form>
+      <p id="form-status" role="status">No action submitted yet.</p>
+    </section>
+
+    <section class="card" aria-labelledby="limits-title">
+      <h2 id="limits-title">Local Demo Limits</h2>
+      <p>
+        A basic Python static server does not provide production HTTPS, real certificate chains,
+        production cookies, or server-managed security headers. Those limitations should be
+        documented during evidence collection instead of being treated as production findings.
+      </p>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
