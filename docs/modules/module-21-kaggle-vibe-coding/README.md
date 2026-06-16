@@ -6,15 +6,15 @@ This module integrates the "5-Day AI Agents: Intensive Vibe Coding Course With G
 
 This module introduces Cloud Run deployment and AI Studio API integrations. According to the repository's `GUARDRAILS.md`, any infrastructure changes involving Cloud Run or external API keys must pass manual review before implementation.
 
-## Evidence Model
+## Evidence Model (Planned)
 In accordance with the `DEVTOOLS_VERIFICATION_GUIDE.md`:
-1. **What changed?** A new AI Agent Web Application will be deployed using Cloud Run, integrating Google AI Studio and MCP (Model Context Protocol).
-2. **Which Chrome DevTools panels verified it?**
-   - **Network Panel:** Verification of API payloads sent to AI Studio and MCP servers.
-   - **Console Panel:** Verification of MCP logs and agent interaction tracing.
-3. **What cloud/runtime behavior was observed?** Cloud Run autoscaling behavior and Secret Manager injection of API keys.
-4. **What risks were avoided?** API keys were strictly excluded from `.env` and `git` commits by leveraging Google Secret Manager during deployment. No PHI or sensitive data was processed.
-5. **What portfolio output did this produce?** An end-to-end "Vibe Coded" agentic web application deployed securely on Google Cloud.
+1. **What will change?** A new AI Agent Web Application (Kaggle Agent Workbench) will be deployed using Cloud Run, integrating Google AI Studio.
+2. **Which Chrome DevTools panels will verify it?**
+   - **Network Panel:** Verification of API payloads sent to AI Studio.
+   - **Console Panel:** Verification of agent interaction logs and local mock execution.
+3. **What planned cloud/runtime behavior is expected?** Cloud Run autoscaling behavior and Secret Manager injection of API keys.
+4. **What risks will be avoided?** API keys will be strictly excluded from `.env` and `git` commits by leveraging Google Secret Manager during deployment. No PHI or sensitive data will be processed.
+5. **What expected portfolio output will this produce?** An end-to-end "Vibe Coded" agentic web application deployed securely on Google Cloud.
 
 ## Safety & Privacy Policy
 - **No PHI/Health Data:** The application will strictly avoid any processing of patient data, e-Nabız exports, or medical records.
