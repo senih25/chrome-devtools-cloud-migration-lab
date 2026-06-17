@@ -17,18 +17,20 @@ This plan is derived from Kaggle's official course overview and discussion posts
 - Day 1 assignment
 - Day 2 assignment
 - Day 3 assignment
+- Day 4 assignment
+- Day 5 assignment
 
-Days 4 and 5 are not planned yet because the source material has not been provided in this workspace.
+Days 4 and 5 are now mapped from the official June 2026 curriculum and remain subject to the repository's safety gates.
 
 ## Course-to-Repo Mapping
 
 | Day | Kaggle topic | Repo interpretation | Allowed scope |
 |---|---|---|---|
-| Day 1 | Introduction to Agents & Vibe Coding, AI Studio, Cloud Run, Antigravity 2.0 / IDE / CLI | Cloud-side architecture and deployment gate | Docs only until manual review |
+| Day 1 | Introduction to Agents & Vibe Coding, AI Studio, Cloud Run, Antigravity 2.0 / IDE / CLI | Cloud-side architecture and deployment gate | Docs only (See Day 1 Plan) until manual review |
 | Day 2 | Agent Tools & Interoperability, Antigravity CLI, Google Developer Knowledge MCP server | Local interoperability and tool-calling mock workbench | Local mock implementation only |
 | Day 3 | Agent Skills, Antigravity Skills, Agents CLI, ADK | Reusable skill structure and context management patterns | Local-first implementation only |
-| Day 4 | Not yet sourced | Pending source material | Not planned |
-| Day 5 | Not yet sourced | Pending source material | Not planned |
+| Day 4 | Agent Quality: evaluating and improving robust, reliable AI agents | Local guardrail and quality-evaluation exercises | Local mock implementation only |
+| Day 5 | Prototype to Production: operational lifecycle, deployment, and scaling | Production-readiness and cloud deployment gate | Docs only until manual review |
 
 ## Course Rules Observed
 
@@ -37,6 +39,8 @@ Days 4 and 5 are not planned yet because the source material has not been provid
 - The first assignment begins with course onboarding and setup.
 - The course is designed for learners building and understanding AI agents.
 - Day 1 deployment uses Cloud Run Starter Tier and does not require a billing account.
+- Day 4 focuses on evaluating and improving agent quality.
+- Day 5 focuses on moving from prototype to production.
 - The course emphasizes live sessions, discussion forum support, and community guidance.
 
 ## Repository Strategy
@@ -46,9 +50,11 @@ Document the course mapping before expanding implementation.
 
 Expected outputs:
 - module plan
+- day 1 evidence map (`DAY_1_PLAN.md`)
 - day-by-day evidence map
 - security boundary note
 - manual review gate
+- Day 4 / Day 5 quality-and-production mapping
 
 ### Stage 2: Local Mock Workbench
 Build a synthetic local demo that demonstrates the course ideas without live cloud dependencies.
@@ -91,7 +97,8 @@ Explicitly excluded until manual review:
 1. Finalize the day-by-day documentation plan.
 2. Validate the local mock workbench for Day 2 and Day 3 concepts.
 3. Keep Day 1 cloud behavior as documentation-only until manual review.
-4. Wait for Day 4 and Day 5 source material before extending the plan.
+4. Keep Day 4 local quality/evaluation work inside mock and guardrail boundaries.
+5. Keep Day 5 production/deploy behavior documentation-only until manual review.
 
 ## Expected Portfolio Outcome
 
@@ -100,5 +107,6 @@ A safe, reproducible, and repo-compliant Kaggle AI Agents module that demonstrat
 - vibe coding workflow understanding
 - agent tools and interoperability concepts
 - agent skills and context management
+- agent quality and production-readiness boundaries
 - local-first validation discipline
 - cloud deployment readiness with explicit safety gates
