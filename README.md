@@ -18,6 +18,13 @@ This repository is not just a collection of learning notes. It is designed as a 
 | Module 00 | Done | App Engine Python 2.7 / webapp2 baseline | Baseline review |
 | Module 01 | Done | App Engine webapp2 / Python 2 toward Flask / Python 3 | Network, Console, Application |
 | Module 02 | Done | App Engine NDB to Cloud NDB migration | Network, Console, Application, Datastore index evidence |
+| Module 03 | Done | Cloud NDB to Cloud Datastore migration | Network, Console, Application, Security |
+| Module 04 | Done | App Engine to Cloud Run with Docker | Network, Console, Application, Security |
+| Module 05 | Done | Cloud Run migration using Cloud Buildpacks | Network, Console, Application, Security |
+| Module 10 | Done | HTTPS, mixed content, cookie/security review | Security, Application, Network |
+| Module 11 | Done | Accessibility checklist and fixes | Lighthouse, Elements, Accessibility |
+| Module 12 | Done | JS debugging scenario (sources/debugging) | Sources, Console |
+| Module 21 | Done | Kaggle AI Agent local workbench & graph | Network, Console |
 
 ## Evidence model
 

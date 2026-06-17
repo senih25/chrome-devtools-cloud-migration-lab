@@ -23,9 +23,9 @@ Status values:
 | 07 | `module-07-appengine-push-tasks` | Implemented / evidence pending | Official Google codelab / baseline implemented | App Engine Push Task Queues baseline before Module 08 Cloud Tasks | Network, Console, Cloud Logging | App Engine, Task Queue push queues | Medium | `gae-flask-module-1/mod7-gaetasks-baseline/README-module-07.md` + `docs/modules/module-07-appengine-push-tasks/` | Push Task Queue baseline with local tests; deploy/evidence deferred | Requires gated deploy/evidence PR |
 | 08 | `module-08-cloud-tasks-plan` | Later | Official Google codelab / research planning | Cloud Tasks migration plan | Network, Console, Cloud Logging | App Engine, Cloud Tasks | Medium | `docs/modules/module-08-cloud-tasks-plan/` | Cloud Tasks migration planning package | Needs manual review |
 | 09 | `module-09-pwa-service-worker` | Later | Research candidate | Offline-capable demo | Application, Network | Optional hosting | Medium | TBD | PWA evidence | Needs manual review |
-| 10 | `module-10-security-panel` | Next | Research candidate | HTTPS, mixed content, cookie/security review | Security, Application, Network | Optional hosting | Medium | TBD | Security review practice | Allowed public-safe documentation/checklist pattern |
-| 11 | `module-11-accessibility-audit` | Next | Research candidate | A11y checklist and fixes | Lighthouse, Elements, Accessibility | None | Low | TBD | Accessibility proof | Allowed public-safe documentation/checklist pattern |
-| 12 | `module-12-devtools-sources-debugging` | Next | Research candidate | JS debugging scenario | Sources, Console | None | Low | TBD | Debugging portfolio scenario | Allowed public-safe documentation/checklist pattern |
+| 10 | `module-10-security-panel` | Done | Research candidate | HTTPS, mixed content, cookie/security review | Security, Application, Network | Optional hosting | Medium | `docs/modules/module-10-security-panel/` | Security review practice | Allowed public-safe documentation/checklist pattern |
+| 11 | `module-11-accessibility-audit` | Done | Research candidate | A11y checklist and fixes | Lighthouse, Elements, Accessibility | None | Low | `docs/modules/module-11-accessibility-audit/` | Accessibility proof | Allowed public-safe documentation/checklist pattern |
+| 12 | `module-12-devtools-sources-debugging` | Done | Research candidate | JS debugging scenario | Sources, Console | None | Low | `docs/modules/module-12-sources-debugging/` | Debugging portfolio scenario | Allowed public-safe documentation/checklist pattern |
 | 13 | `module-13-ai-assisted-dev-workflow` | Next | Internal workflow | Agent-safe development workflow | N/A | GitHub, AI tools | Medium | TBD | AI-assisted engineering workflow | Needs manual review |
 | 14 | `module-14-memorystore-redis` | Later | Research candidate | Cache behavior demo | Network, Performance | Memorystore | High cost | TBD | Caching pattern | Needs manual review |
 | 15 | `module-15-firestore-native` | Later | Research candidate | Data model modernization option | Application, Console | Firestore | Medium | TBD | Data modernization research | Needs manual review |
@@ -42,5 +42,5 @@ These are repo-governance modules, not part of the official Google codelab numbe
 
 | ID | Module slug | Status | Product outcome | Evidence location | Portfolio output |
 |----|-------------|--------|-----------------|-------------------|------------------|
-| INT-01 | `internal-repo-guardrails` | Now | GitHub Actions repo guardrails for blocked paths and public-safe checks | `.github/workflows/repo-guardrails.yml` | Repo governance proof |
+| INT-01 | `internal-repo-guardrails` | Done | GitHub Actions repo guardrails for blocked paths and public-safe checks | `.github/workflows/repo-guardrails.yml` | Repo governance proof |
 
