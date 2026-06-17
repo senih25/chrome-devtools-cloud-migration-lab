@@ -21,6 +21,7 @@ This repository is not just a collection of learning notes. It is designed as a 
 | Module 03 | Done | Cloud NDB to Cloud Datastore migration | Network, Console, Application, Security |
 | Module 04 | Done | App Engine to Cloud Run with Docker | Network, Console, Application, Security |
 | Module 05 | Done | Cloud Run migration using Cloud Buildpacks | Network, Console, Application, Security |
+| Module 09 | Done | PWA / Service Worker offline caching | Application, Network |
 | Module 10 | Done | HTTPS, mixed content, cookie/security review | Security, Application, Network |
 | Module 11 | Done | Accessibility checklist and fixes | Lighthouse, Elements, Accessibility |
 | Module 12 | Done | JS debugging scenario (sources/debugging) | Sources, Console |

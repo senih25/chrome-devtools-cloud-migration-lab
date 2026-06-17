@@ -1,0 +1,15 @@
+{
+  "short_name": "PWA Demo",
+  "name": "Module 9 PWA Offline Cache Demo",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='192' height='192' viewBox='0 0 192 192'><rect width='192' height='192' fill='%230288d1'/><text x='50%' y='55%' font-family='sans-serif' font-size='96' fill='white' text-anchor='middle'>PWA</text></svg>",
+      "type": "image/svg+xml",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#ffffff",
+  "theme_color": "#0288d1",
+  "display": "standalone"
+}
