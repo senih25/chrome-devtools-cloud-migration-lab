@@ -89,5 +89,33 @@ def run_agent():
     return jsonify(mock_result)
 
 
+@app.route("/api/tools/execute", methods=["POST"])
+def execute_tool():
+    """Day 2 mock endpoint for agent tool execution and interoperability."""
+    if not MOCK_MODE:
+        return jsonify({"error": "Live AI mode is disabled by repository guardrails."}), 501
+
+    data = request.get_json(silent=True) or {}
+    tool_name = str(data.get("tool_name", "")).strip()
+    tool_args = data.get("tool_args") or {}
+
+    if not tool_name:
+        return jsonify({"error": "tool_name is required"}), 400
+
+    if tool_name == "search_docs":
+        query = str(tool_args.get("query", "unknown")).strip()
+        result = f"Mock documentation results for query: '{query}'"
+    else:
+        result = f"Mock execution of tool '{tool_name}' completed successfully."
+
+    return jsonify(
+        {
+            "tool_name": tool_name,
+            "status": "success",
+            "result": result,
+        }
+    )
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=PORT, debug=True)
