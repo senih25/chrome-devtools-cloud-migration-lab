@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Module 9 PWA Caching Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Safe local-only demo for auditing PWA service workers and offline cache behaviors.">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="manifest" href="./manifest.json">
+</head>
+<body>
+  <header>
+    <h1>Module 9 PWA Offline Caching Demo</h1>
+    <p>
+      This demo tests service worker registration, static asset caching, and offline support.
+    </p>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="status-title">
+      <h2 id="status-title">Network Connection Status</h2>
+      <p>
+        Current state: <span id="network-status" class="status-indicator status-online">Online</span>
+      </p>
+    </section>
+
+    <section class="card" aria-labelledby="cache-title">
+      <h2 id="cache-title">Service Worker & Cache Controls</h2>
+      <p>
+        Use this button to register or trigger local interactions. The Service Worker intercepts fetches.
+      </p>
+      <button id="interaction-btn" type="button">Trigger local action</button>
+      <p id="interaction-status" role="status">No action triggered yet.</p>
+    </section>
+
+    <section class="card" aria-labelledby="devtools-title">
+      <h2 id="devtools-title">How to Audit in DevTools</h2>
+      <ul>
+        <li>Open the <strong>Application</strong> panel and review the <strong>Manifest</strong> section.</li>
+        <li>Inspect <strong>Service Workers</strong> to verify status. Check <em>Update on reload</em> to ease updates.</li>
+        <li>Verify cached files under <strong>Cache Storage</strong> -> <em>pwa-cache-v1</em>.</li>
+        <li>Switch the <strong>Network</strong> panel to <strong>Offline</strong> and reload this page to test offline functionality.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
