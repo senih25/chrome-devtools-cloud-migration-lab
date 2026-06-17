@@ -170,6 +170,41 @@ The ADK provides the implementation framework for the concepts learned across al
 - Day 2's MCP tools become the **tool layer**
 - Day 3's context engineering becomes the **state management layer**
 
+## Day 3 Interactive Playground Verification Results (2026-06-17)
+
+To verify the customer support workflow agent, we started the local ADK Dev Server on `http://127.0.0.1:8080` and loaded the Dev UI playground:
+1. **Dev Server Run Command**:
+   ```bash
+   uv run adk web . --host 127.0.0.1 --port 8080 --reload_agents
+   ```
+2. **First Query - Shipping Rates**:
+   - **Input**: `"Hello, can you tell me what the shipping rates are?"`
+   - **Graph Execution Trace**: `START` -> `save_query` -> `categorize` -> `route_inquiry` -> branch `"shipping"` -> `shipping_faq` -> `END`.
+   - **LLM Agent Classification**: `categorize` correctly output `{"category": "shipping"}`.
+   - **Final Response**: `"Standard shipping is $5.99. Express shipping is $12.99. Orders over $50 qualify for free standard shipping."`
+   - **DevTools Panel Observation**: Checked Traces panel. Found total latency was `6.44s`. All node executions marked as successful (green).
+3. **Second Query - Unrelated Subject**:
+   - **Input**: `"What is the capital of France?"`
+   - **Graph Execution Trace**: `START` -> `save_query` -> `categorize` -> `route_inquiry` -> branch `"unrelated"` -> `handle_unrelated` -> `END`.
+   - **LLM Agent Classification**: `categorize` correctly output `{"category": "unrelated"}`.
+   - **Final Response**: `"I am sorry, I am a shipping customer support assistant and can only answer questions related to our shipping FAQ."`
+   - **DevTools Panel Observation**: Verified the correct polite refusal string was returned to the browser client and displayed in the chat interface.
+
+### ADK 2.2.0 & Graph Bugs Fixed
+During implementation, several code defects and deprecated API usages in the prototype were solved:
+- **Import Structure Update**: Mapped imports to match `google-adk==2.2.0` layout: `Context` and `LlmAgent` from `google.adk.agents`, and `START`, `Edge`, `Workflow`, and `node` from `google.adk.workflow`.
+- **Workflow Edges Chain Refactoring**: `Edge.chain` is deprecated/unavailable in ADK 2.2.0. Refactored the graph compiler setup to use standard tuple chains and dictionary routing maps:
+  ```python
+  edges=[
+      (START, save_query, categorize_agent, route_inquiry),
+      (route_inquiry, {
+          "shipping": faq_agent,
+          "unrelated": handle_unrelated,
+      }),
+  ]
+  ```
+- **Event Value Propagation Fix**: Changed `yield Event(data=...)` in node implementations (`save_query`, `route_inquiry`, `handle_unrelated`) to `yield Event(output=...)`. Since `data` is not a valid Pydantic field on the `Event` class, it was being silently ignored and passing `None` to downstream agents. Changing it to `output` resolved the state passing bug and successfully fed user queries into the LLM prompts.
+
 ## Completion Status
 
 - [x] Whitepaper concepts studied and noted
@@ -181,3 +216,4 @@ The ADK provides the implementation framework for the concepts learned across al
 - [x] Context engineering techniques cataloged
 - [x] Safety boundary confirmed
 - [x] DevTools checklist completed
+- [x] Customer Support Agent scaffolded, implemented, and verified in local Playground UI

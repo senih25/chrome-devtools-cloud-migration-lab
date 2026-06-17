@@ -121,9 +121,35 @@ Google Developer Knowledge MCP Server
 3. **Context Enhancement**: MCP tool results are injected into the agent's context, enriching its knowledge for the current task.
 4. **No Custom Integration Code**: The MCP protocol eliminates the need to write custom API client code for each data source.
 
+### Verification & Live Execution Proof
+
+The integration was successfully verified both via the fallback `firebase-mcp-server` and the direct custom `google-developer-knowledge` MCP server once the API key restriction was fully propagated and set in `mcp_config.json`. Below are the actual execution outcomes recorded:
+
+1. **API Environment Setup**:
+   - Registered the `google-developer-knowledge` server under `mcp_config.json` with the restricted API key.
+   - Set the active GCP project context to `gen-lang-client-0495723250`.
+
+2. **Direct Custom Server Query Test (`google-developer-knowledge/search_documents`)**:
+   - **Query**: `"Google Workspace MCP servers"`
+   - **Result**: Successfully fetched documentation pages for configuring Google Workspace remote MCP servers (Gmail, Drive, Calendar, Chat, People API), verifying the restricted API key authentication works seamlessly.
+
+3. **Grounded Answer Query Test (`google-developer-knowledge/answer_query`)**:
+   - **Query**: `"How do I install the Antigravity CLI?"`
+   - **Result**: Grounded response generated with platform-specific instructions for macOS/Linux (`curl`) and Windows PowerShell (`irm`), listing optional installation flags and verification steps.
+   - **References cited**:
+     - `documents/antigravity.google/docs/cli-install`
+     - `documents/antigravity.google/docs/cli-getting-started`
+
+4. **Document Retrieval Test (`google-developer-knowledge/get_documents`)**:
+   - **Document**: `"documents/antigravity.google/docs/cli-install"`
+   - **Result**: Successfully retrieved the full markdown content of the installation and authentication guide.
+
+This live validation confirms that all 6 steps of the codelab, including custom server registration and key restriction, are fully completed and verified.
+
 ### Portfolio Relevance
 
 Demonstrates understanding of how standardized protocols (MCP) replace custom integrations — a key architectural decision in production AI systems.
+
 
 ## Completion Status
 

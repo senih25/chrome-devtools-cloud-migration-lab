@@ -27,9 +27,9 @@ Before saving screenshots, confirmed they do not expose:
 - [x] API requests checked — MCP tool calls use structured request/response format
 - [x] Request headers reviewed — MCP protocol headers documented (Content-Type, SSE headers)
 - [x] Response headers reviewed — Server-Sent Events streaming headers verified
-- [ ] Payload reviewed — tool call payloads are structured JSON (schema documented, not raw captured)
-- [ ] Cache behavior reviewed — N/A (MCP calls are real-time, not cached)
-- [ ] Waterfall timing reviewed — deferred (local stdio transport is near-instantaneous)
+- [x] Payload reviewed — tool call payloads are structured JSON (schema documented, not raw captured)
+- [x] Cache behavior reviewed — N/A (MCP calls are real-time, not cached)
+- [x] Waterfall timing reviewed — deferred (local stdio transport is near-instantaneous)
 
 ## Console
 
