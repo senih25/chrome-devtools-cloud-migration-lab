@@ -16,6 +16,25 @@ Open:
 http://127.0.0.1:8090/
 ```
 
+## Run With Security Headers
+
+For Module 10-E remediation validation, run the local security-header server:
+
+```powershell
+python .\server.py --port 8090
+```
+
+Expected response headers:
+
+```text
+Content-Security-Policy
+X-Frame-Options
+X-Content-Type-Options
+Referrer-Policy
+Permissions-Policy
+Strict-Transport-Security
+```
+
 ## DevTools Panels
 
 Use Chrome DevTools:

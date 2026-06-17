@@ -1,0 +1,41 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 2rem;
+  line-height: 1.5;
+  max-width: 960px;
+}
+
+header,
+section {
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 0.75rem 0;
+}
+
+code {
+  background: #f4f4f4;
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background: white;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 3px;
+}
+
+.status {
+  font-weight: 700;
+}
