@@ -1,29 +1,104 @@
 # Module 21: Kaggle AI Agents Vibe Coding
 
-This module integrates the "5-Day AI Agents: Intensive Vibe Coding Course With Google" into the Chrome DevTools Cloud Migration Lab. 
+This module maps the Kaggle "5-Day AI Agents: Intensive Vibe Coding Course With Google" to a repository-safe, day-by-day implementation plan.
 
-## Status: Needs manual review
+## Status
 
-This module introduces Cloud Run deployment and AI Studio API integrations. According to the repository's `GUARDRAILS.md`, any infrastructure changes involving Cloud Run or external API keys must pass manual review before implementation.
+Needs manual review
 
-## Evidence Model (Planned)
-In accordance with the `DEVTOOLS_VERIFICATION_GUIDE.md`:
-1. **What will change?** A new AI Agent Web Application (Kaggle Agent Workbench) will be deployed using Cloud Run, integrating Google AI Studio.
-2. **Which Chrome DevTools panels will verify it?**
-   - **Network Panel:** Verification of API payloads sent to AI Studio.
-   - **Console Panel:** Verification of agent interaction logs and local mock execution.
-3. **What planned cloud/runtime behavior is expected?** Cloud Run autoscaling behavior and Secret Manager injection of API keys.
-4. **What risks will be avoided?** API keys will be strictly excluded from `.env` and `git` commits by leveraging Google Secret Manager during deployment. No PHI or sensitive data will be processed.
-5. **What expected portfolio output will this produce?** An end-to-end "Vibe Coded" agentic web application deployed securely on Google Cloud.
+This module includes Cloud Run, AI Studio, and API key handling decisions. Per repository guardrails, anything involving deployment, public endpoints, or secret management must remain gated until manual review is complete.
 
-## Safety & Privacy Policy
-- **No PHI/Health Data:** The application will strictly avoid any processing of patient data, e-Nabız exports, or medical records.
-- **API Key Management:** 
-  - *Local Development:* Keys will be passed via temporary terminal `export`. No `.env` files will be committed.
-  - *Deployment:* Keys will be securely stored and retrieved using Google Secret Manager.
+## Source Basis
 
-## Phased Implementation Plan
-This module is being developed in strict compliance with the repository's phased branch workflow:
-1. **Phase 1 (Current):** Docs-only PR updating `MODULE_INDEX.md`, `ROADMAP.md`, and this planning document.
-2. **Phase 2 (Next):** Local demo implementation (`app.py`, `Dockerfile`) without live cloud deployment.
-3. **Phase 3 (Deployment):** Cloud Run deployment, Secret Manager configuration, and DevTools evidence collection.
+This plan is derived from Kaggle's official course overview and discussion posts:
+
+- Course overview
+- Welcome + setup instructions
+- Day 1 assignment
+- Day 2 assignment
+- Day 3 assignment
+
+Days 4 and 5 are not planned yet because the source material has not been provided in this workspace.
+
+## Course-to-Repo Mapping
+
+| Day | Kaggle topic | Repo interpretation | Allowed scope |
+|---|---|---|---|
+| Day 1 | Introduction to Agents & Vibe Coding, AI Studio, Cloud Run, Antigravity 2.0 / IDE / CLI | Cloud-side architecture and deployment gate | Docs only until manual review |
+| Day 2 | Agent Tools & Interoperability, Antigravity CLI, Google Developer Knowledge MCP server | Local interoperability and tool-calling mock workbench | Local mock implementation only |
+| Day 3 | Agent Skills, Antigravity Skills, Agents CLI, ADK | Reusable skill structure and context management patterns | Local-first implementation only |
+| Day 4 | Not yet sourced | Pending source material | Not planned |
+| Day 5 | Not yet sourced | Pending source material | Not planned |
+
+## Course Rules Observed
+
+- Assignments do not need to be submitted.
+- The course can be completed at your own pace.
+- The first assignment begins with course onboarding and setup.
+- The course is designed for learners building and understanding AI agents.
+- Day 1 deployment uses Cloud Run Starter Tier and does not require a billing account.
+- The course emphasizes live sessions, discussion forum support, and community guidance.
+
+## Repository Strategy
+
+### Stage 1: Docs-first
+Document the course mapping before expanding implementation.
+
+Expected outputs:
+- module plan
+- day-by-day evidence map
+- security boundary note
+- manual review gate
+
+### Stage 2: Local Mock Workbench
+Build a synthetic local demo that demonstrates the course ideas without live cloud dependencies.
+
+Allowed:
+- local server only
+- mock agent planning endpoint
+- mock agent execution endpoint
+- console/network evidence collection
+- no real API key usage
+- no `.env`
+- no PHI
+- no real user data
+
+### Stage 3: Manual Review Gate for Cloud
+Only after docs and local validation are complete:
+
+- Cloud Run deployment
+- AI Studio integration
+- Secret Manager-based key handling
+- public endpoint review
+- cost review
+- security review
+
+## Safety Boundaries
+
+Explicitly excluded until manual review:
+
+- PHI
+- e-Nabız exports
+- patient data
+- real health records
+- committed secrets
+- `.env` files
+- production endpoints
+- unreviewed cloud billing impact
+
+## Recommended Implementation Order
+
+1. Finalize the day-by-day documentation plan.
+2. Validate the local mock workbench for Day 2 and Day 3 concepts.
+3. Keep Day 1 cloud behavior as documentation-only until manual review.
+4. Wait for Day 4 and Day 5 source material before extending the plan.
+
+## Expected Portfolio Outcome
+
+A safe, reproducible, and repo-compliant Kaggle AI Agents module that demonstrates:
+
+- vibe coding workflow understanding
+- agent tools and interoperability concepts
+- agent skills and context management
+- local-first validation discipline
+- cloud deployment readiness with explicit safety gates
