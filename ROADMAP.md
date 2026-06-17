@@ -61,6 +61,7 @@ These modules require cost, IAM, security, or architecture review before work:
 - Cloud Trace
 - Secret Manager-touching security module
 - any identity or production-like auth module
+- module-21-kaggle-vibe-coding (Cloud Run deployment and AI Studio integration review)
 
 ## Avoid
 

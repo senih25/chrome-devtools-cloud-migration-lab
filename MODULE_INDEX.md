@@ -34,6 +34,7 @@ Status values:
 | 18 | `module-18-cloud-cdn` | Needs manual review | Research candidate | Cache hit/miss analysis | Network, Lighthouse | Cloud CDN | High cost | TBD | Edge performance research | Needs manual review |
 | 19 | `module-19-api-gateway` | Needs manual review | Research candidate | API boundary analysis | Network, Security | API Gateway | High | TBD | API governance research | Needs manual review |
 | 20 | `module-20-cloud-trace` | Needs manual review | Research candidate | Trace correlation research | Network, Performance | Cloud Trace | Medium/high | TBD | Observability research | Needs manual review |
+| 21 | `module-21-kaggle-vibe-coding` | Needs manual review | Kaggle AI Agents Codelab | AI Agent Web App | Network, Console | Cloud Run, AI Studio, Secret Manager | Medium | `docs/modules/module-21-kaggle-vibe-coding/` | AI Agent workflow & Cloud Run deployment | Needs manual review |
 
 ## Internal / non-codelab modules
 
