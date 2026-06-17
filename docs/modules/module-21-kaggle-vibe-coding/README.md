@@ -22,6 +22,21 @@ This plan is derived from Kaggle's official course overview and discussion posts
 
 Days 4 and 5 are now mapped from the official June 2026 curriculum and remain subject to the repository's safety gates.
 
+## Official Citation
+
+Kaggle course:
+[5-Day AI Agents: Intensive Vibe Coding Course With Google](https://www.kaggle.com/competitions/5-day-ai-agents-intensive-vibecoding-course-with-google)
+
+```bibtex
+@misc{five_day_ai_agents_intensive_vibe_coding_course_with_google,
+  author = {Brenda Flynn and Fran Hinkelmann and Polong Lin and Nikita Namjoshi and Anant Nawalgaria and Kinjal Parekh and Kanchana Patlolla and Jim Plotts and María Cruz and Tania Rodriguez Fuentes and Frank Guan and Melissa Nalubwama-Mukasa and Sara Wolley},
+  title = {5-Day AI Agents: Intensive Vibe Coding Course With Google},
+  year = {2026},
+  url = {https://www.kaggle.com/competitions/5-day-ai-agents-intensive-vibecoding-course-with-google},
+  note = {Kaggle}
+}
+```
+
 ## Course-to-Repo Mapping
 
 | Day | Kaggle topic | Repo interpretation | Allowed scope |
