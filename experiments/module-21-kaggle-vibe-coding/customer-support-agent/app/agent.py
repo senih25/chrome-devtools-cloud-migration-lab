@@ -88,7 +88,7 @@ def security_check(ctx: Context, node_input: Any):
     yield Event(output=payload, state=payload, route=route)
 
 
-def save_query(node_input: str):
+def save_query(node_input: Any):
     """Saves user query in state for downstream nodes."""
     query = _extract_query(node_input)
     yield Event(output=query, state={"user_query": query})
