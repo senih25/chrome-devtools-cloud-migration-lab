@@ -14,6 +14,7 @@
 
 from __future__ import annotations
 
+import re
 import os
 from typing import Any, Literal
 
@@ -40,9 +41,57 @@ class InquiryCategory(BaseModel):
     )
 
 
+PHI_PATTERN = re.compile(
+    r"\b(?:patient|medical|health|record|tc[_\s-]?kimlik|e-?nabiz|hasta|doktor)\b",
+    re.IGNORECASE,
+)
+PROMPT_INJECTION_PATTERN = re.compile(
+    r"\b(?:ignore previous instructions|reveal the system prompt|output 123)\b",
+    re.IGNORECASE,
+)
+
+
+def _extract_query(node_input: Any) -> str:
+    """Normalizes workflow input into a plain user query string."""
+    parts = getattr(node_input, "parts", None)
+    if parts:
+        text_parts = [part.text for part in parts if getattr(part, "text", None)]
+        if text_parts:
+            return "".join(text_parts)
+    if isinstance(node_input, dict):
+        query = node_input.get("query", "")
+        return str(query)
+    return str(node_input)
+
+
+@node
+def security_check(ctx: Context, node_input: Any):
+    """Evaluates the query for PHI and prompt-injection patterns."""
+    query = _extract_query(node_input)
+    phi_detected = bool(PHI_PATTERN.search(query))
+    prompt_injection = bool(PROMPT_INJECTION_PATTERN.search(query))
+    violation_type = None
+
+    if phi_detected:
+        violation_type = "PHI_LEAK_PREVENTION"
+    elif prompt_injection:
+        violation_type = "PROMPT_INJECTION_PREVENTION"
+
+    payload = {
+        "user_query": query,
+        "query": query,
+        "phi_detected": phi_detected,
+        "prompt_injection": prompt_injection,
+        "violation_type": violation_type,
+    }
+    route = "unsafe" if violation_type else "safe"
+    yield Event(output=payload, state=payload, route=route)
+
+
 def save_query(node_input: str):
     """Saves user query in state for downstream nodes."""
-    yield Event(output=node_input, state={"user_query": node_input})
+    query = _extract_query(node_input)
+    yield Event(output=query, state={"user_query": query})
 
 
 categorize_agent = LlmAgent(
@@ -96,10 +145,27 @@ def handle_unrelated(ctx: Context, node_input: Any):
     )
 
 
+@node
+def handle_unsafe(ctx: Context, node_input: Any):
+    """Rejects unsafe prompts before they reach the classifier or FAQ."""
+    violation_type = ctx.state.get("violation_type", "POLICY_VIOLATION")
+    yield Event(
+        message=(
+            "Security Alert: "
+            f"{violation_type}. The request was blocked by repository guardrails."
+        )
+    )
+
+
 root_agent = Workflow(
     name="customer_support_workflow",
     edges=[
-        (START, save_query, categorize_agent, route_inquiry),
+        (START, security_check),
+        (security_check, {
+            "safe": save_query,
+            "unsafe": handle_unsafe,
+        }),
+        (save_query, categorize_agent, route_inquiry),
         (route_inquiry, {
             "shipping": faq_agent,
             "unrelated": handle_unrelated,
