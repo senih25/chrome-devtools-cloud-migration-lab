@@ -1,0 +1,25 @@
+[project]
+name = "expense-approval-agent"
+version = "0.1.0"
+description = "Local deterministic ADK human-in-the-loop expense workflow"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "google-adk>=2.0.0,<3.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2,<10.0.0",
+    "pytest-asyncio>=1.0.0,<2.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]

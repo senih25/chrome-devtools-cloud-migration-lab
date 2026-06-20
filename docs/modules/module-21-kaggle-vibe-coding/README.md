@@ -6,6 +6,10 @@ This module maps the Kaggle "5-Day AI Agents: Intensive Vibe Coding Course With 
 
 Needs manual review
 
+The five-day curriculum is complete as a local-first learning milestone. Live
+cloud work remains gated, and the separate capstone has not been submitted. See
+`COURSE_COMPLETION_RECORD.md` for the exact completion boundary.
+
 This module includes Cloud Run, AI Studio, and API key handling decisions. Per repository guardrails, anything involving deployment, public endpoints, or secret management must remain gated until manual review is complete.
 
 ## Source Basis
@@ -114,6 +118,13 @@ Explicitly excluded until manual review:
 3. Keep Day 1 cloud behavior as documentation-only until manual review.
 4. Keep Day 4 local quality/evaluation work inside mock and guardrail boundaries.
 5. Keep Day 5 production/deploy behavior documentation-only until manual review.
+
+## Final Course Records
+
+- `DAY_4_SECURITY_AND_HITL_EVIDENCE.md`
+- `DAY_5_PRODUCTION_GRADE_PLAN.md`
+- `COURSE_COMPLETION_RECORD.md`
+- `MODULE_21_MILESTONE_CLOSURE.md`
 
 ## Expected Portfolio Outcome
 
