@@ -25,7 +25,7 @@ This repository is not just a collection of learning notes. It is designed as a 
 | Module 10 | Done | HTTPS, mixed content, cookie/security review | Security, Application, Network |
 | Module 11 | Done | Accessibility checklist and fixes | Lighthouse, Elements, Accessibility |
 | Module 12 | Done | JS debugging scenario (sources/debugging) | Sources, Console |
-| Module 21 | Done | Kaggle AI Agent local workbench & graph | Network, Console |
+| Module 21 | Needs manual review | Kaggle AI Agent local-first workbench, HITL workflow, and five-day course evidence; cloud deployment deferred | Network, Console |
 
 ## Evidence model
 
